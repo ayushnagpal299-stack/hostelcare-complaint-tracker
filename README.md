@@ -1,0 +1,2 @@
+# hostelcare-complaint-tracker
+A responsive hostel complaint management dashboard built using HTML and CSS. It allows students to submit maintenance complaints, view complaint categories, track complaint statuses, and access hostel support information.
