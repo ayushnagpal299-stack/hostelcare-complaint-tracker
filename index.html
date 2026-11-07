@@ -1,57 +1,374 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="HostelCare is a hostel maintenance portal for submitting and tracking hostel room complaints.">
+
     <title>HostelCare | Complaint Tracker</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
     <!-- Navigation Bar -->
     <header>
+
         <h2>HostelCare</h2>
 
         <nav>
             <a href="#home">Home</a>
             <a href="#categories">Categories</a>
-            <a href="#submit">Submit</a>
-            <a href="#track">Track</a>
+            <a href="#submit">Submit Complaint</a>
+            <a href="#track">Track Complaint</a>
+            <a href="#contact">Contact</a>
         </nav>
+
     </header>
 
-    <!-- Main Section -->
+
+    <!-- Main Content -->
     <main>
 
         <!-- Welcome Section -->
         <section id="home">
 
             <p>HOSTEL MAINTENANCE PORTAL</p>
+
             <h1>
                 A better hostel starts with a better response.
             </h1>
 
             <p>
-                Report maintenance problems and find the right support for your hostel.
+                Report maintenance problems and find the right
+                support for your hostel.
+
                 <a href="#submit">Report a problem.</a>
             </p>
+
         </section>
-    
-    <!-- Complaint Categories Section -->
-    <section class="categories" id="categories">
-        <h2>Complaint Categories</h2>
-        <p class="section-text">
-            Select the category related to your problem
+
+
+        <!-- Complaint Categories Section -->
+        <section class="categories" id="categories">
+
+            <h2>Complaint Categories</h2>
+
+            <p class="section-text">
+                Select the category related to your problem.
+            </p>
+
+            <div class="category-container">
+
+                <a href="#submit" class="category-card">
+                    <div class="category-icon">💧</div>
+                    <h3>Water Issue</h3>
+                    <p>Problems related to water supply and leakage.</p>
+                </a>
+
+
+                <a href="#submit" class="category-card">
+                    <div class="category-icon">⚡</div>
+                    <h3>Electricity</h3>
+                    <p>Lights, fans and power supply problems.</p>
+                </a>
+
+
+                <a href="#submit" class="category-card">
+                    <div class="category-icon">📶</div>
+                    <h3>WiFi Issue</h3>
+                    <p>Internet and connectivity problems.</p>
+                </a>
+
+
+                <a href="#submit" class="category-card">
+                    <div class="category-icon">🛏️</div>
+                    <h3>Room Maintenance</h3>
+                    <p>Furniture, doors and room repair problems.</p>
+                </a>
+
+
+                <a href="#submit" class="category-card">
+                    <div class="category-icon">🤔</div>
+                    <h3>Other Issues</h3>
+                    <p>Report any other hostel-related problem.</p>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Submit Complaint Section -->
+        <section class="submit-section" id="submit">
+
+            <h2>Submit a Complaint</h2>
+
+            <p class="section-text">
+                Tell us about the problem in your hostel.
+            </p>
+
+
+            <form action="#" method="post">
+
+                <!-- Student Information -->
+                <h3>Student Information</h3>
+
+                <label for="student-name">Student Name</label>
+
+                <input
+                    type="text"
+                    id="student-name"
+                    name="student-name"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                    minlength="3"
+                >
+
+                <br><br>
+
+
+                <label for="room-number">Room Number</label>
+
+                <input
+                    type="text"
+                    id="room-number"
+                    name="room-number"
+                    placeholder="Enter your room number"
+                    required
+                >
+
+                <br><br>
+
+
+                <label for="registration-id">Registration ID</label>
+
+                <input
+                    type="text"
+                    id="registration-id"
+                    name="registration-id"
+                    placeholder="Enter your registration ID"
+                    required
+                    minlength="5"
+                >
+
+                <br><br>
+
+
+                <label for="hostel-block">Hostel / Block</label>
+
+                <input
+                    type="text"
+                    id="hostel-block"
+                    name="hostel-block"
+                    placeholder="Enter your hostel or block name"
+                    required
+                >
+
+                <br><br>
+
+
+                <!-- Complaint Information -->
+                <h3>Complaint Information</h3>
+
+
+                <label for="category">Complaint Category</label>
+
+                <select id="category" name="category" required>
+
+                    <option value="">Select Category</option>
+
+                    <option value="water">Water Issue</option>
+
+                    <option value="electricity">Electricity</option>
+
+                    <option value="wifi">WiFi Issue</option>
+
+                    <option value="maintenance">Room Maintenance</option>
+
+                    <option value="other">Other Issues</option>
+
+                </select>
+
+                <br><br>
+
+
+                <label for="location">Problem Location</label>
+
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="Example: Room 204, Bathroom, Corridor"
+                    required
+                >
+
+                <br><br>
+
+
+                <label for="priority">Complaint Priority</label>
+
+                <select id="priority" name="priority" required>
+
+                    <option value="">Select Priority</option>
+
+                    <option value="low">Low</option>
+
+                    <option value="medium">Medium</option>
+
+                    <option value="high">High</option>
+
+                    <option value="urgent">Urgent</option>
+
+                </select>
+
+                <br><br>
+
+
+                <!-- Problem Description -->
+                <h3>Describe Your Problem</h3>
+
+                <textarea
+                    id="description"
+                    name="description"
+                    rows="6"
+                    cols="40"
+                    placeholder="Explain your complaint in detail..."
+                    minlength="10"
+                    maxlength="500"
+                    required
+                ></textarea>
+
+                <p class="section-text">
+                    Maximum 500 characters.
+                </p>
+
+                <br>
+
+
+                <!-- Optional Image Upload -->
+                <label for="complaint-image">
+                    Upload Problem Image (Optional)
+                </label>
+
+                <input
+                    type="file"
+                    id="complaint-image"
+                    name="complaint-image"
+                    accept="image/*"
+                >
+
+                <br><br>
+
+
+                <button type="submit">
+                    Submit Complaint
+                </button>
+
+                <button type="reset">
+                    Clear Form
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Track Complaint Section -->
+        <section class="track-section" id="track">
+
+            <h2>Track Your Complaint</h2>
+
+            <p class="section-text">
+                Check the current status of your complaint.
+            </p>
+
+            <form action="#" method="get">
+
+                <label for="complaint-id">
+                    Complaint ID
+                </label>
+
+                <input
+                    type="text"
+                    id="complaint-id"
+                    name="complaint-id"
+                    placeholder="Example: HC10245"
+                    required
+                >
+
+                <br><br>
+
+                <button type="submit">
+                    Track Complaint
+                </button>
+
+            </form>
+
+            <p>
+                Your complaint status will be available
+                using your unique complaint ID.
+            </p>
+
+        </section>
+
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+
+            <h2>Need Help?</h2>
+
+            <p class="section-text">
+                Contact the hostel maintenance team.
+            </p>
+
+            <div class="contact-box">
+
+                <h3>HostelCare Support</h3>
+
+                <p>
+                    Email:
+                    <a href="mailto:support@hostelcare.com">
+                        support@hostelcare.com
+                    </a>
+                </p>
+
+                <p>
+                    Office: Hostel Maintenance Office
+                </p>
+
+                <p>
+                    Working Hours: 9 AM to 5 PM
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer Section -->
+    <footer>
+
+        <p>
+            Copyright &copy; 2026 HostelCare.
+            All Rights Reserved.
         </p>
 
+        <p>
+            Making hostel maintenance easier and faster.
+        </p>
 
+        <a href="#home">Back to Top ↑</a>
 
-    </section>
-    
-    
-    
-    </main>
+    </footer>
+
 </body>
 
 </html>
